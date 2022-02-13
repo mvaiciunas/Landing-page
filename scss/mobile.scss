@@ -1,0 +1,188 @@
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin firstLast {
+
+  & div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  } 
+
+  form {
+    @include flex-center;
+    flex-direction: column;
+  }
+
+  h2 {
+    color: white;  
+    padding-bottom: 20px;
+    text-align: center;
+  }
+
+  input {
+    max-width: 280px;
+    height: 30px;
+    color: grey;
+    margin: 10px 0;
+    padding: 0 10px;
+    border-radius: 5px;
+    border: none;
+  }
+
+  button {
+  min-width: 300px;
+  height: 30px;
+  background: #007bff;
+  color: white;
+  border-radius: 5px;
+  border: none;
+    }
+}
+
+@mixin p {
+  font-size: small;
+  text-align: center;
+}
+
+@media (max-width: 740px) {
+
+  header {
+  @include flex-center;
+  flex-direction: column;
+  height: 600px;
+  background: url(../images/bg-masthead.jpg);
+  background-size: cover;
+  background-position: center;
+  @include firstLast;
+ }
+
+ .section-1 {
+  @include flex-center;
+  flex-direction: column;
+  height: 800px;
+  background: #f8f9fa;
+
+  & div {
+    @include flex-center;
+    flex-direction: column;
+    margin:10px 100px;
+
+   & h3 {
+      margin-top: 10px;
+    }
+
+   & p {
+      @include p;
+      margin: 10px 50px;
+    }
+  }
+}
+
+    .section-2 {
+  @include flex-center;
+  flex-direction: column;
+
+  img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    object-position: left;
+  }
+
+  h3 {
+    margin-bottom: 5px;
+    text-align: left;
+  }
+
+  & .container-1,
+  .container-2,
+  .container-3 {
+    @include flex-center;
+    flex-direction: column-reverse;
+  }
+
+  .text {
+    padding: 70px
+  }
+
+ }
+
+    .section-3 {
+  @include flex-center;
+  flex-direction: column;
+  background: #f8f9fa;
+  padding: 40px 0;
+
+  & .container {
+    @include flex-center;
+    flex-direction: column;
+    margin-top: 20px;
+  }
+
+  & div {
+    @include flex-center;
+    flex-direction: column;
+    align-self: flex-start;
+    margin: 20px 40px;
+  }
+
+  & img {
+    width: 40%;
+    border-radius: 100%;
+    margin-bottom: 10px
+  }  
+
+  & p {
+    @include p;
+    margin-top: 10px;
+  }
+}
+
+  .section-4 {
+  @include flex-center;
+  flex-direction: column;
+  height: 300px;
+  background: url(../images/bg-masthead.jpg);
+  background-size: cover;
+  background-position: center;
+  @include firstLast;  
+  
+  & form {
+      @include flex-center;
+  }
+ }
+
+ footer {
+    @include flex-center;
+    flex-direction: column;
+    height: 150px;
+    padding: 20px;
+
+  & ul {
+  order: 1;
+  }
+
+  & h6 {
+    order: 2;
+    margin: 0 0 0 -55px;
+  }
+
+  & .text {
+    @include flex-center;
+    flex-direction: column;
+  }
+
+   & div .icons {
+    @include flex-center;
+    flex-direction: row;  
+    width: 100%;
+    order: 3;  
+
+  }
+ }    
+}
